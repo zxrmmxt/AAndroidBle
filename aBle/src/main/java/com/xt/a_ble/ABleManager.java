@@ -23,8 +23,6 @@ public class ABleManager {
     private ScanControl mScanControl;
     private final BluetoothManager mBluetoothManager;
     private List<BleStateChangeListener> mBleStateChangeListeners = new ArrayList<>();
-    private MultiDeviceConnectControl mMultiDeviceConnectControl;
-    private OneDeviceConnectControl mOneDeviceConnectControl;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     public ABleManager(Context context) {
@@ -116,7 +114,9 @@ public class ABleManager {
     public void removeMyLeScanCallback(ALeScanCallback aLeScanCallback) {
         mScanControl.removeMyLeScanCallback(aLeScanCallback);
     }
+
     /*************************scan**********************************/
+    private OneDeviceConnectControl mOneDeviceConnectControl;
 
     public OneDeviceConnectControl getOneDeviceConnectControl() {
         return mOneDeviceConnectControl;
@@ -125,6 +125,9 @@ public class ABleManager {
     public void setOneDeviceConnectControl(OneDeviceConnectControl oneDeviceConnectControl) {
         mOneDeviceConnectControl = oneDeviceConnectControl;
     }
+
+
+    private MultiDeviceConnectControl mMultiDeviceConnectControl;
 
     public MultiDeviceConnectControl getMultiDeviceConnectControl() {
         return mMultiDeviceConnectControl;
