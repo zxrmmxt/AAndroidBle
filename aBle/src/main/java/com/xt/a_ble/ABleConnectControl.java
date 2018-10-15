@@ -169,8 +169,8 @@ public class ABleConnectControl {
         }
     }
 
-    public int getConnectState(AFastBleManager aFastBleManager) {
-        return BleConnectionStateUtils.getConnectState(aFastBleManager,mBluetoothDevice);
+    public int getConnectState(ABleManager aBleManager) {
+        return BleConnectionStateUtils.getConnectState(aBleManager,mBluetoothDevice);
     }
 
     private ABluetoothGattCallback coreGattCallback = new ABluetoothGattCallback() {

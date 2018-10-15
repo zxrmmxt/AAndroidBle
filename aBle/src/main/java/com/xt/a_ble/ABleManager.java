@@ -17,7 +17,7 @@ import java.util.List;
  * @// TODO: 2018/5/2 当前FastBle版本v2.3.0（2018-04-29）
  */
 
-public class AFastBleManager {
+public class ABleManager {
     private Context mContext;
     private BluetoothAdapter mBluetoothAdapter;
     private ScanControl mScanControl;
@@ -27,7 +27,7 @@ public class AFastBleManager {
     private OneDeviceConnectControl mOneDeviceConnectControl;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    public AFastBleManager(Context context) {
+    public ABleManager(Context context) {
         mContext = context;
         BluetoothAdapterStateChangeReceiver bluetoothAdapterStateChangeReceiver = new BluetoothAdapterStateChangeReceiver() {
             @Override

@@ -13,8 +13,8 @@ import android.support.annotation.RequiresApi;
 
 public class BleConnectionStateUtils {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    public static int getConnectState(AFastBleManager aFastBleManager, BluetoothDevice bluetoothDevice) {
-        BluetoothManager bluetoothManager = aFastBleManager.getBluetoothManager();
+    public static int getConnectState(ABleManager aBleManager, BluetoothDevice bluetoothDevice) {
+        BluetoothManager bluetoothManager = aBleManager.getBluetoothManager();
         if (bluetoothManager != null && bluetoothDevice != null) {
             return bluetoothManager.getConnectionState(bluetoothDevice, BluetoothProfile.GATT);
         }
@@ -38,8 +38,8 @@ public class BleConnectionStateUtils {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    public static String getConnectStateStr(AFastBleManager aFastBleManager, BluetoothDevice bluetoothDevice) {
-        int connectState = getConnectState(aFastBleManager, bluetoothDevice);
+    public static String getConnectStateStr(ABleManager aBleManager, BluetoothDevice bluetoothDevice) {
+        int connectState = getConnectState(aBleManager, bluetoothDevice);
         return getConnectStateStr(connectState);
     }
 
